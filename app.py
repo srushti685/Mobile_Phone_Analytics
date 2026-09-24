@@ -10,7 +10,7 @@ import joblib
 
 st.set_page_config(
     page_title="Mobile Phone Analytics",
-    page_icon="📱",
+   
     layout="wide"
 )
 
@@ -27,7 +27,7 @@ model_pipeline = joblib.load("model.pkl")
 # TITLE
 # ---------------------------------------------------
 
-st.title("📱 Mobile Phone Analytics Dashboard")
+st.title(" Mobile Phone Analytics Dashboard")
 
 st.write(
     "Explore mobile phone prices, specifications, ratings and performance."
@@ -38,7 +38,7 @@ st.write(
 # SIDEBAR FILTER
 # ---------------------------------------------------
 
-st.sidebar.header("🔎 Filters")
+st.sidebar.header(" Filters")
 
 brand_list = sorted(data["brand"].dropna().unique().tolist())
 
@@ -60,7 +60,7 @@ else:
 # KPI CARDS
 # ---------------------------------------------------
 
-st.subheader("📊 Key Statistics")
+st.subheader(" Key Statistics")
 
 col1, col2, col3, col4 = st.columns(4)
 
@@ -93,7 +93,7 @@ with col4:
 # CHART 1 - PHONES BY BRAND
 # ---------------------------------------------------
 
-st.subheader("📱 Number of Phones by Brand")
+st.subheader(" Number of Phones by Brand")
 
 brand_count = (
     filtered_data["brand"]
@@ -120,7 +120,7 @@ st.plotly_chart(
 # CHART 2 - AVERAGE PRICE BY BRAND
 # ---------------------------------------------------
 
-st.subheader("💰 Average Price by Brand")
+st.subheader(" Average Price by Brand")
 
 brand_price = (
     filtered_data
@@ -150,7 +150,7 @@ st.plotly_chart(
 # CHART 3 - PRICE CATEGORY
 # ---------------------------------------------------
 
-st.subheader("💵 Price Category Distribution")
+st.subheader(" Price Category Distribution")
 
 category_count = (
     filtered_data["price_category"]
@@ -177,7 +177,7 @@ st.plotly_chart(
 # MOBILE PHONE DETAILS
 # ---------------------------------------------------
 
-st.subheader("📋 Mobile Phone Details")
+st.subheader(" Mobile Phone Details")
 
 columns_to_show = [
     "name",
@@ -200,9 +200,9 @@ st.dataframe(
 # SPECIFICATIONS & PERFORMANCE
 # ---------------------------------------------------
 
-st.header("📱 Specifications & Performance")
+st.header(" Specifications & Performance")
 
-st.subheader("💾 RAM vs Price")
+st.subheader(" RAM vs Price")
 
 fig4 = px.scatter(
     filtered_data,
@@ -224,7 +224,7 @@ st.plotly_chart(
 # STORAGE VS PRICE
 # ---------------------------------------------------
 
-st.subheader("💾 Storage vs Price")
+st.subheader(" Storage vs Price")
 
 fig5 = px.scatter(
     filtered_data,
@@ -247,7 +247,7 @@ st.plotly_chart(
 # BATTERY VS PRICE
 # ---------------------------------------------------
 
-st.subheader("🔋 Battery vs Price")
+st.subheader(" Battery vs Price")
 
 fig6 = px.scatter(
     filtered_data,
@@ -270,7 +270,7 @@ st.plotly_chart(
 # ANTUTU SCORE VS PRICE
 # ---------------------------------------------------
 
-st.subheader("⚡ AnTuTu Score vs Price")
+st.subheader(" AnTuTu Score vs Price")
 
 fig7 = px.scatter(
     filtered_data,
@@ -293,7 +293,7 @@ st.plotly_chart(
 # DISPLAY SIZE VS PRICE
 # ---------------------------------------------------
 
-st.subheader("📱 Display Size vs Price")
+st.subheader(" Display Size vs Price")
 
 fig8 = px.scatter(
     filtered_data,
@@ -316,7 +316,7 @@ st.plotly_chart(
 # REAR CAMERA VS PRICE
 # ---------------------------------------------------
 
-st.subheader("📷 Rear Camera vs Price")
+st.subheader(" Rear Camera vs Price")
 
 fig9 = px.scatter(
     filtered_data,
@@ -339,7 +339,7 @@ st.plotly_chart(
 # USER RATING VS PRICE
 # ---------------------------------------------------
 
-st.subheader("⭐ User Rating vs Price")
+st.subheader(" User Rating vs Price")
 
 fig10 = px.scatter(
     filtered_data,
@@ -362,7 +362,7 @@ st.plotly_chart(
 # EXPERT RATING VS PRICE
 # ---------------------------------------------------
 
-st.subheader("🏆 Expert Rating vs Price")
+st.subheader(" Expert Rating vs Price")
 
 fig11 = px.scatter(
     filtered_data,
@@ -385,7 +385,7 @@ st.plotly_chart(
 # USER RATING DISTRIBUTION
 # ---------------------------------------------------
 
-st.subheader("⭐ User Rating Distribution")
+st.subheader(" User Rating Distribution")
 
 fig12 = px.histogram(
     filtered_data,
@@ -407,7 +407,7 @@ st.plotly_chart(
 # EXPERT RATING DISTRIBUTION
 # ---------------------------------------------------
 
-st.subheader("🏆 Expert Rating Distribution")
+st.subheader(" Expert Rating Distribution")
 
 fig13 = px.histogram(
     filtered_data,
@@ -429,9 +429,9 @@ st.plotly_chart(
 # TOP 10 PHONES BY USER RATING
 # ---------------------------------------------------
 
-st.header("🏆 Top Mobile Phones")
+st.header(" Top Mobile Phones")
 
-st.subheader("⭐ Top 10 Phones by User Rating")
+st.subheader(" Top 10 Phones by User Rating")
 
 top_user_rating = (
     filtered_data
@@ -460,7 +460,7 @@ st.plotly_chart(
 # TOP 10 PHONES BY EXPERT RATING
 # ---------------------------------------------------
 
-st.subheader("🏆 Top 10 Phones by Expert Rating")
+st.subheader(" Top 10 Phones by Expert Rating")
 
 top_expert_rating = (
     filtered_data
@@ -489,7 +489,7 @@ st.plotly_chart(
 # TOP 10 PHONES BY SPECIFICATION SCORE
 # ---------------------------------------------------
 
-st.subheader("📊 Top 10 Phones by Specification Score")
+st.subheader(" Top 10 Phones by Specification Score")
 
 top_spec_score = (
     filtered_data
@@ -518,7 +518,7 @@ st.plotly_chart(
 # PRICE PREDICTION
 # ---------------------------------------------------
 
-st.header("💰 Mobile Phone Price Prediction")
+st.header(" Mobile Phone Price Prediction")
 
 st.write("Enter the phone specifications below to predict its price.")
 
@@ -608,7 +608,7 @@ with col2:
     )
 
 
-if st.button("🔮 Predict Price"):
+if st.button(" Predict Price"):
 
     input_data = pd.DataFrame({
         "brand": [brand_input],
